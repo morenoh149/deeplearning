@@ -1,12 +1,13 @@
 package main
 
-func transpose(A) {
-	for i := 0; i < len(A); i++ {
-		for j := 0; j < len(A[i]); j++ {
-
+func transpose(a [][]int) [][]int {
+	width := len(a[0])
+	result := make([][]int, width)
+	for _, row := range a {
+		for j, value := range row {
+			result[j] = append(result[j], value)
 		}
 	}
-	result = A[i][j]
 	return result
 }
 

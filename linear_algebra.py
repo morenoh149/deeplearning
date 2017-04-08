@@ -2,7 +2,16 @@ import math
 
 
 def transpose(A):
-    return [[A[i][j] for i in range(len(A))] for j in range(len(A[0]))]
+    # return [[A[i][j] for i in range(len(A))] for j in range(len(A[0]))]
+    B = []
+    height = len(A)
+    width = len(A[0])
+    for i in range(width):
+        B.append([])
+    for i in range(height):
+        for j in range(width):
+            B[j].append(A[i][j])
+    return B
 
 
 def is_scalar(x):

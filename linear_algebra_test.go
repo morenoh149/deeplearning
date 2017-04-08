@@ -1,3 +1,28 @@
+package main
+
+import (
+	"reflect"
+	"testing"
+)
+
+func TestTranspose_1(t *testing.T) {
+	a := [][]int{{1, 2}, {3, 4}}
+	actual := transpose(a)
+	expected := [][]int{{1, 4}, {2, 4}}
+	if !reflect.DeepEqual(expected, actual) {
+		t.Fatalf("transpose not equal, %v", actual)
+	}
+}
+
+func TestTranspose_2(t *testing.T) {
+	a := [][]int{{1, 2, 3}, {4, 5, 6}}
+	actual := transpose(a)
+	expected := [][]int{{1, 1}, {2, 5}, {3, 6}}
+	if !reflect.DeepEqual(expected, actual) {
+		t.Fatalf("transpose not equal")
+	}
+}
+
 /*
 from unittest import TestCase
 from linear_algebra import *
