@@ -8,18 +8,18 @@ import (
 func TestTranspose_1(t *testing.T) {
 	a := [][]int{{1, 2}, {3, 4}}
 	actual := transpose(a)
-	expected := [][]int{{1, 4}, {2, 4}}
+	expected := [][]int{{1, 3}, {2, 4}}
 	if !reflect.DeepEqual(expected, actual) {
-		t.Fatalf("transpose not equal, %v", actual)
+		t.Fatalf("%v != %v", actual, expected)
 	}
 }
 
 func TestTranspose_2(t *testing.T) {
 	a := [][]int{{1, 2, 3}, {4, 5, 6}}
 	actual := transpose(a)
-	expected := [][]int{{1, 1}, {2, 5}, {3, 6}}
+	expected := [][]int{{1, 4}, {2, 5}, {3, 6}}
 	if !reflect.DeepEqual(expected, actual) {
-		t.Fatalf("transpose not equal")
+		t.Fatalf("%v != %v", actual, expected)
 	}
 }
 
